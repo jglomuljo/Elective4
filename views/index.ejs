@@ -6,7 +6,7 @@
       
   </head>
   <body style="background-color: #F7F4EA;">
-   <% let namepage = "A new H1 Text" %>
+  
 
 
      <div class="navbar" style=" margin: 25px;">
@@ -30,9 +30,19 @@
 
     
     <h1 style="color:#80A1D4; margin-top: 50px; margin-left: 100px;">
-   <%= namepage; %>
+         <%= studentdata[1].fname; %>
+
+         <% for(student of studentdata){ %>
+            <p> 
+               <%= student.fname; %>
+               <%= student.age; %>
+               <%= student.course; %>
+            </p>
+      <% } %>
    </h1>
-   
+
+
+   <div>Icons made by <a href="https://www.flaticon.com/authors/fjstudio" title="fjstudio">fjstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

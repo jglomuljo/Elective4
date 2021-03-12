@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const {students} = require('./students');
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -17,7 +18,7 @@ app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
     //res.sendFile('./pages/index.html', {root: __dirname});
-    res.render('index');
+    res.render('index', {studentdata: students});
   });
 app.get('/about', function (req, res) {
     //res.sendFile('./pages/about.html', {root: __dirname});
