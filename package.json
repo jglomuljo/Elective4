@@ -1,0 +1,25 @@
+{
+  "name": "pa3",
+  "version": "1.0.0",
+  "description": "first node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jglomuljo/Elective4.git"
+  },
+  "keywords": [
+    "firt",
+    "node",
+    "app",
+    "application"
+  ],
+  "author": "joselle lomuljo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jglomuljo/Elective4/issues"
+  },
+  "homepage": "https://github.com/jglomuljo/Elective4#readme"
+}
