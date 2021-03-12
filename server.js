@@ -18,15 +18,15 @@ app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
     //res.sendFile('./pages/index.html', {root: __dirname});
-    res.render('index', {studentdata: students});
+    res.render('index', {title: 'Home' ,studentdata: students});
   });
 app.get('/about', function (req, res) {
     //res.sendFile('./pages/about.html', {root: __dirname});
-    res.render('about', {heading: 'New Heading' });
+    res.render('about', {title: 'About Us', heading: 'New Heading' });
   });
 app.get('/contact', function (req, res) {
     //res.sendFile('./pages/contact.html', {root: __dirname});
-    res.render('contact');
+    res.render('contact', {title: 'Contact Us'});
   });
 
 
@@ -37,7 +37,7 @@ app.get('/aboutus', function (req, res) {
 
 
 app.use((req, res) => {
-    res.render('error');
+    res.render('error', {title: 'Error 404'});
 });
 
 
