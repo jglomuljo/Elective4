@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const {students} = require('./students');
 const app = express();
 const weather = require('weather-js');
+const animal = require('cute-animals')
 
 app.set('view engine', 'ejs');
 
@@ -36,8 +37,8 @@ app.get('/', function (req, res) {
 
 
 app.get('/about', function (req, res) {
-  
-   res.render('about', {title: 'About Us', heading: 'New Heading-About Us' });
+  var anim = animal('adj adj animal');
+   res.render('about', {title: 'Generate an Animal', heading: 'Generate an Animal', animl: anim });
   });
 
   
