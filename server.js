@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const {students} = require('./students');
 const app = express();
+const weather = require('weather-js');
 
 app.set('view engine', 'ejs');
 
@@ -17,16 +18,32 @@ app.use((req, res, next) => {
 app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
-    //res.sendFile('./pages/index.html', {root: __dirname});
-    res.render('index', {title: 'Home' ,studentdata: students});
+  weather.find({search: 'Davao, PH', degreeType: 'C'}, function(err, result) {
+    if(err){
+        console.log(err);
+        res.render('index', {title: 'Home', heading: 'Weather', weather: 'Nothing'});
+    }
+    else{
+        //console.log(result);
+        res.render('index', {title: 'Home', heading: 'Weather', weather: result});
+    
+    }
+    console.log(result);
   });
+
+    
+  });
+
+
 app.get('/about', function (req, res) {
-    //res.sendFile('./pages/about.html', {root: __dirname});
-    res.render('about', {title: 'About Us', heading: 'New Heading' });
+  
+   res.render('about', {title: 'About Us', heading: 'New Heading-About Us' });
   });
+
+  
 app.get('/contact', function (req, res) {
     //res.sendFile('./pages/contact.html', {root: __dirname});
-    res.render('contact', {title: 'Contact Us'});
+    res.render('contact', {title: 'Contact Us', fullname: 'Beidou Ningguang'});
   });
 
 

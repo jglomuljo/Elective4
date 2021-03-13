@@ -7,20 +7,89 @@
 
         <%- include('./partials/navigation') %>
 
-    <h1 style="color:#80A1D4; margin-top: 50px; margin-left: 100px;">
-         <%= studentdata[1].fname; %>
-
-         <% for(student of studentdata){ %>
-            <p> 
-               <%= student.fname; %>
-               <%= student.age; %>
-               <%= student.course; %>
-            </p>
-      <% } %>
+    <h1 style="color:#80A1D4; margin-top: 50px; margin-left: 100px; margin-right: 100px;">
+         <%= heading; %>
    </h1>
+   <center>
+   <div class="container">
+      <div class="row" >
+      <img style="width:270px;height:190px;" src="https://previews.dropbox.com/p/thumb/ABHUfboqVK3SEy6TlkfNVw5-yHBT38gq5K4D_777IDSG476oEA-7Jm8SbsK99IRUb0xrtm25HCVodtzGAsc5Gjn9LZYLXXGEmRj5JmxMMviGAh2mV0nxbRlOjWGHTnJVHBocO3HGt6dEscVK-UiDJLOlnW-5IDd9bIjiEHb6mWSy7lGMxeZ_MWBdRvp6SNGAXkBP9hpGGZX1ThurnENOghgIbhNXbJTD99efSU6k5kAQ1pFUdQsphHEp3JNFWDixK_3mQbcZqFMqvlbPNRJkubuMZALKDIUzZrAZoVA4Y5Wy1DwZUhP9EgV4n_dz7unFlqY4WMv5WgBXJ2-ZnzVIeWkCqxGoE8iutZgisKmKadbLbw/p.png?fv_content=true&size_mode=5">
+      
+      <h5><%= weather[0]['location']['name']%></h5>
+      <h5><%= weather[0]['location']['long']%> N</h5>
+      <h5><%= weather[0]['location']['lat']%> E</h5> <br>
+   </div>
+   
+      <div class="row" style="margin-top: 50px; margin-left: 100px; margin-right: 100px;">
+        <div class="col" style="padding: 20px 20px 20px 20px;">
+           
+            <% switch(['current']['skytext']){ case 'Cloudy': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF3ftnPeq35cn8uG2-a3bxxw4qK8EW3Ro1GeBk5WyTw3gQ8v4HXNJ79Jx4ilh8-lAg3-rGTwV7CJtJkRnzrWvkgBVmBNhbaIjJbg6aC0oC1P6osCSKcVIjpu-5Do-yGXf491Rw-zG5H0rhYFa2ejitYBaRQUOwxkg4GBwiFzY73pqfN_60ldX3H7gUZ0oX2utRu7JLr1ny_kPfdBjvRWM5ntfF6XhdxuhtwlerYBNyNpVJWUKF5lQ0uRI7NGFf51MRj8gxbJ03wqQEK-_FP_Y1h3wRvlSZY2xEx715JNYDbt4Nzc0-QANPf0qQdRxlAVIwMDCdH-VLEzwRVKYDVu92-WikGuMhGzUufbkqFAStEuA/p.png?size=2048x1536&size_mode=3" >
+            <% break; case 'T-Storms': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHGyHJaSK-C9GZMDAoq9TgMKbHjWMnzSZ-hD1daFtgWXoQN4_Rwfd7GZop59I0rXPSxIHQwMhws6w9BRuw9G5jdSG_KlKVpeWykhcpOwP1-REfjw9C29BJDxxKazQZq2XB_6gM542uuv_J93P7JgLFFVlSgzLeuaXVJGXoiVoA-RPFhyGCrgmV5iKO_XWZId3BsdhBHZeu0l5Gdjj5NjC9fX8sc9fZIEuWJ4IBAM-grFi-yuPUAk9K-Jl3dcofALKeSOxSxGD_8aXr9VZgw4epuFJP3NhlEWzne44H7XnFwr0kg_9-izq_c2LChOxGB43L61JgrQBYFI6xS2qb5hJpsdTmXOtVxy8enyXazIzNdVw/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Light Rain': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF7DuCe0KcF46naidbfR5_EY6--OUTN1Cqp1nZBrF3ntTKjXjpvNz-u8VPJh4kcRGONiABC9oSxK6mWCbfvmdCCWEHvcrGhiMvn1NrLL03Rueqfb0-xbeFdKqbE4vHh40e8lZDV28y3L0WSPTTJD1Az2fHYi7PE-C5SMpcM8jbw07Cvk7faPr-lkapUDCbBAXfjXG3PMY9saP5f4s6qGRSJe7-Udoct7YxXcXlfcj9q8RqOGtzpBICsrjOoU9iiugbVtLrRpH9iVtuFy-HZpkDYhpnXDVJz68NO1JqFALlXcy0snmFn3FH3kE-tldFftHjvpOBblgwOOuSqDgSq2KWkDOJSNudbQoQT_ZnHUJfyAw/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Mostly Cloudy': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF3ftnPeq35cn8uG2-a3bxxw4qK8EW3Ro1GeBk5WyTw3gQ8v4HXNJ79Jx4ilh8-lAg3-rGTwV7CJtJkRnzrWvkgBVmBNhbaIjJbg6aC0oC1P6osCSKcVIjpu-5Do-yGXf491Rw-zG5H0rhYFa2ejitYBaRQUOwxkg4GBwiFzY73pqfN_60ldX3H7gUZ0oX2utRu7JLr1ny_kPfdBjvRWM5ntfF6XhdxuhtwlerYBNyNpVJWUKF5lQ0uRI7NGFf51MRj8gxbJ03wqQEK-_FP_Y1h3wRvlSZY2xEx715JNYDbt4Nzc0-QANPf0qQdRxlAVIwMDCdH-VLEzwRVKYDVu92-WikGuMhGzUufbkqFAStEuA/p.png?size=2048x1536&size_mode=3" >
+            <% break; case 'Mostly Sunny': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Sunny': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Clear': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Snowy': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABE1JUtMwbEyPYJC2fLhREvl7871JZEFhcsMysRGFfiE-I_mCNzr-kSVVy6IDN2LC2OM_tpPPaL4BqvNC5JTupDRU_ZLvyISahGekVv2Zi_Bb0LxakZ9eNR2LJNFV25orgylBLdybJPmREJw66T5lD4GL9-iu5LfIsvX5IWD7NAQf-KebHeU0S9zi-42Vc9yW9XkiflHvnZ4d_FTxnxCwqssdI3TLSsXsxumpqHfyFkZxNEI_ugJop5Fp6LJPxtjQ4ZnOB6fGHKvXFPl0yk21sj5S1R8PW1EY1UTOK2zFkHB4GEjguBvgg0uq8WsLDjUh9QjAWQS0ZluX6RgiQjUWmK_GpBU7RfLd_T3grF8kicapA/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Thunder': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF1zEp7JWkdFCmAJO4mqM1VEjWBeOvrUMqmzbb8E6oNpLyIk92BzXaiDHn-6cF2ViDmpc1mwyA467OR2JzIUDbDNgXHbtDBlaIXea6hFa_6ZREbYgWNPNLKW2xE_eSvr7rqz5AgtAB4c3fnFLlXr9uvZBg0-SlQf6kUUOBJ8A3BAm5nmBdDT6LVmoNdFWrrBgRF3B7ggJla77DeLYbDuQAwsu15SEz4LO0U2A-0kzwuZRECMduFzlO1I-hdz1AIPnM_rtLRDi0tEDc3_3yh4KhiplZIN0ZTxydWSzf_KVJPKcadi129EwU-JBKvWyFLgeM5VZLPKT_qTIEIAJTUxCVeCQrFBZeT9YkkC-1twghGRw/p.png?fv_content=true&size_mode=5" >
+            <% break; case 'Windy': %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF8cMiya6wpJpFbE4gXoZpAp6aoMd_Y6pJxAtNoTol6pTgAHGDvuaSA9cBeWDgwvBUsD5q637WavvsyfH0s6eEupAELfDk6yLkBHfqq3m_xvUMJMGZEKZddELz6zU0NoPSA2JInKYWEQL6X6NY0YNyzZ4gMtvYKiaEOMINSuAGVOIubHMy60kKE19lZngT1z40K3GeZvCbK8NHBm-RN19PXrENJ5UuBfklYU21YSXVSWrBOY4xcC2G1GFrLSy2b-6nQWVBSqXqTE1T94akwUMIxEhpEUAhjbs5imS2FwAmNEq8cSK9-ChJJNpURsVolmFzvH6MN1-DNr6P0_apwsRBAMOafZphreUnDjqvxrSdCCg/p.png?fv_content=true&size_mode=5" >
+            <% break; default: %>
+            <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+            <% break; } %>
+            <h5><b>Today</b></h5> 
+            <p><%= weather[0]['current']['date']%></p>
+            <p><%= weather[0]['current']['temperature']%> °C </p>
+          
+      </div> 
+      
+      <p><% for(forecast of weather[0]['forecast']) {%></p>
+         <div class="col" style="padding: 20px 20px 20px 20px;">
+         
+            <% switch(forecast['skytextday']){ case 'Cloudy': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF3ftnPeq35cn8uG2-a3bxxw4qK8EW3Ro1GeBk5WyTw3gQ8v4HXNJ79Jx4ilh8-lAg3-rGTwV7CJtJkRnzrWvkgBVmBNhbaIjJbg6aC0oC1P6osCSKcVIjpu-5Do-yGXf491Rw-zG5H0rhYFa2ejitYBaRQUOwxkg4GBwiFzY73pqfN_60ldX3H7gUZ0oX2utRu7JLr1ny_kPfdBjvRWM5ntfF6XhdxuhtwlerYBNyNpVJWUKF5lQ0uRI7NGFf51MRj8gxbJ03wqQEK-_FP_Y1h3wRvlSZY2xEx715JNYDbt4Nzc0-QANPf0qQdRxlAVIwMDCdH-VLEzwRVKYDVu92-WikGuMhGzUufbkqFAStEuA/p.png?size=2048x1536&size_mode=3" >
+                  <% break; case 'T-Storms': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHGyHJaSK-C9GZMDAoq9TgMKbHjWMnzSZ-hD1daFtgWXoQN4_Rwfd7GZop59I0rXPSxIHQwMhws6w9BRuw9G5jdSG_KlKVpeWykhcpOwP1-REfjw9C29BJDxxKazQZq2XB_6gM542uuv_J93P7JgLFFVlSgzLeuaXVJGXoiVoA-RPFhyGCrgmV5iKO_XWZId3BsdhBHZeu0l5Gdjj5NjC9fX8sc9fZIEuWJ4IBAM-grFi-yuPUAk9K-Jl3dcofALKeSOxSxGD_8aXr9VZgw4epuFJP3NhlEWzne44H7XnFwr0kg_9-izq_c2LChOxGB43L61JgrQBYFI6xS2qb5hJpsdTmXOtVxy8enyXazIzNdVw/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Light Rain': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF7DuCe0KcF46naidbfR5_EY6--OUTN1Cqp1nZBrF3ntTKjXjpvNz-u8VPJh4kcRGONiABC9oSxK6mWCbfvmdCCWEHvcrGhiMvn1NrLL03Rueqfb0-xbeFdKqbE4vHh40e8lZDV28y3L0WSPTTJD1Az2fHYi7PE-C5SMpcM8jbw07Cvk7faPr-lkapUDCbBAXfjXG3PMY9saP5f4s6qGRSJe7-Udoct7YxXcXlfcj9q8RqOGtzpBICsrjOoU9iiugbVtLrRpH9iVtuFy-HZpkDYhpnXDVJz68NO1JqFALlXcy0snmFn3FH3kE-tldFftHjvpOBblgwOOuSqDgSq2KWkDOJSNudbQoQT_ZnHUJfyAw/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Mostly Cloudy': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF3ftnPeq35cn8uG2-a3bxxw4qK8EW3Ro1GeBk5WyTw3gQ8v4HXNJ79Jx4ilh8-lAg3-rGTwV7CJtJkRnzrWvkgBVmBNhbaIjJbg6aC0oC1P6osCSKcVIjpu-5Do-yGXf491Rw-zG5H0rhYFa2ejitYBaRQUOwxkg4GBwiFzY73pqfN_60ldX3H7gUZ0oX2utRu7JLr1ny_kPfdBjvRWM5ntfF6XhdxuhtwlerYBNyNpVJWUKF5lQ0uRI7NGFf51MRj8gxbJ03wqQEK-_FP_Y1h3wRvlSZY2xEx715JNYDbt4Nzc0-QANPf0qQdRxlAVIwMDCdH-VLEzwRVKYDVu92-WikGuMhGzUufbkqFAStEuA/p.png?size=2048x1536&size_mode=3" >
+                  <% break; case 'Mostly Sunny': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Sunny': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Clear': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Snowy': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABE1JUtMwbEyPYJC2fLhREvl7871JZEFhcsMysRGFfiE-I_mCNzr-kSVVy6IDN2LC2OM_tpPPaL4BqvNC5JTupDRU_ZLvyISahGekVv2Zi_Bb0LxakZ9eNR2LJNFV25orgylBLdybJPmREJw66T5lD4GL9-iu5LfIsvX5IWD7NAQf-KebHeU0S9zi-42Vc9yW9XkiflHvnZ4d_FTxnxCwqssdI3TLSsXsxumpqHfyFkZxNEI_ugJop5Fp6LJPxtjQ4ZnOB6fGHKvXFPl0yk21sj5S1R8PW1EY1UTOK2zFkHB4GEjguBvgg0uq8WsLDjUh9QjAWQS0ZluX6RgiQjUWmK_GpBU7RfLd_T3grF8kicapA/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Thunder': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF1zEp7JWkdFCmAJO4mqM1VEjWBeOvrUMqmzbb8E6oNpLyIk92BzXaiDHn-6cF2ViDmpc1mwyA467OR2JzIUDbDNgXHbtDBlaIXea6hFa_6ZREbYgWNPNLKW2xE_eSvr7rqz5AgtAB4c3fnFLlXr9uvZBg0-SlQf6kUUOBJ8A3BAm5nmBdDT6LVmoNdFWrrBgRF3B7ggJla77DeLYbDuQAwsu15SEz4LO0U2A-0kzwuZRECMduFzlO1I-hdz1AIPnM_rtLRDi0tEDc3_3yh4KhiplZIN0ZTxydWSzf_KVJPKcadi129EwU-JBKvWyFLgeM5VZLPKT_qTIEIAJTUxCVeCQrFBZeT9YkkC-1twghGRw/p.png?fv_content=true&size_mode=5" >
+                  <% break; case 'Windy': %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABF8cMiya6wpJpFbE4gXoZpAp6aoMd_Y6pJxAtNoTol6pTgAHGDvuaSA9cBeWDgwvBUsD5q637WavvsyfH0s6eEupAELfDk6yLkBHfqq3m_xvUMJMGZEKZddELz6zU0NoPSA2JInKYWEQL6X6NY0YNyzZ4gMtvYKiaEOMINSuAGVOIubHMy60kKE19lZngT1z40K3GeZvCbK8NHBm-RN19PXrENJ5UuBfklYU21YSXVSWrBOY4xcC2G1GFrLSy2b-6nQWVBSqXqTE1T94akwUMIxEhpEUAhjbs5imS2FwAmNEq8cSK9-ChJJNpURsVolmFzvH6MN1-DNr6P0_apwsRBAMOafZphreUnDjqvxrSdCCg/p.png?fv_content=true&size_mode=5" >
+                  <% break; default: %>
+                  <img style="width:90px;height:90px;" src = "https://previews.dropbox.com/p/thumb/ABHhgNmNKnEivZ3K0h5JdBfnA5InSIBokwSo3GpHj_-cKFl8UToiLf8SA9eYDsr9CEkRVwh4xk-StIZGmTx6Ucn2-HnixBAYF9zUgraK2E3OlfU76ue1c_PPr4Le3T6Q9F7AKjkhO6MNYYM0vwgstgvNiv6QtARhfWtliKKZMB2L1qGiPnfqFl-gyAwTwsrFrg__M8Fd0MNqycu1LOSOEPsNHsab8DzzKxe_bW90lxy04CiRBP9_pMeeVCKScsLPQR89qzOb7WOanVGJxAbI02mpnGcP2Ex62iBi5wgFoiQdJduihf5n9T6JcEo_cYdHGT2MJxj1uV3NR1BWVEk5G243NLqty1Lu0XkUoGdCrPQ32A/p.png?fv_content=true&size_mode=5" >
+                  <% break; } %>
+         <h5><%= forecast['day']%> </h5>
+         <p><%= forecast['date']%> </p>
+         <p><%= forecast['high']%> °C </p>
+         </div>
+      <% }%>
+   </div>
+</div>
+</center>
 
-
-   <div>Icons made by <a href="https://www.flaticon.com/authors/fjstudio" title="fjstudio">fjstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+   <div style="margin-top: 50px; margin-left: 100px; margin-right: 100px; ">
+      Icons made by <a href="https://www.flaticon.com/authors/fjstudio" title="fjstudio">fjstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+   </div>
 
    <%- include('./partials/footer') %>
 
