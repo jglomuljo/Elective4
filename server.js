@@ -19,19 +19,8 @@ app.use((req, res, next) => {
 app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
-  weather.find({search: 'Davao, PH', degreeType: 'C'}, function(err, result) {
-    if(err){
-        console.log(err);
-        res.render('index', {title: 'Home', heading: 'Weather', weather: 'Nothing'});
-    }
-    else{
-        //console.log(result);
-        res.render('index', {title: 'Home', heading: 'Weather', weather: result});
-    
-    }
-    console.log(result);
-  });
-
+  
+  res.render('index', {title: 'Home', heading: 'Home'});
     
   });
 
@@ -47,6 +36,20 @@ app.get('/contact', function (req, res) {
     res.render('contact', {title: 'Contact Us', fullname: 'Beidou Ningguang'});
   });
 
+app.get('/other', function (req, res) {
+  weather.find({search: 'Davao, PH', degreeType: 'C'}, function(err, result) {
+    if(err){
+        console.log(err);
+        res.render('other', {title: 'Weather', heading: 'Weather', weather: 'Nothing'});
+    }
+    else{
+        //console.log(result);
+        res.render('other', {title: 'Weather', heading: 'Weather', weather: result});
+    
+    }
+    console.log(result);
+  });
+});
 
 app.get('/aboutus', function (req, res) {
     res.redirect('/about');
