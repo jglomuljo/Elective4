@@ -36,15 +36,15 @@ app.get('/contact', function (req, res) {
     res.render('contact', {title: 'Contact Us', fullname: 'Beidou Ningguang'});
   });
 
-app.get('/other', function (req, res) {
+app.get('/landing', function (req, res) {
   weather.find({search: 'Davao, PH', degreeType: 'C'}, function(err, result) {
     if(err){
         console.log(err);
-        res.render('other', {title: 'Weather', heading: 'Weather', weather: 'Nothing'});
+        res.render('landing', {title: 'Weather', heading: 'Weather', weather: 'Nothing'});
     }
     else{
         //console.log(result);
-        res.render('other', {title: 'Weather', heading: 'Weather', weather: result});
+        res.render('landing', {title: 'Weather', heading: 'Weather', weather: result});
     
     }
     console.log(result);
