@@ -1,9 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
-const {students} = require('./students');
 const app = express();
 const weather = require('weather-js');
-const animal = require('cute-animals')
+const animal = require('cute-animals');
+
+const path = require('path');
+app.use(express.static(path.join(__dirname,'public')));
+
 
 app.set('view engine', 'ejs');
 
@@ -30,32 +33,20 @@ app.get('/about', function (req, res) {
    res.render('about', {title: 'Generate an Animal', heading: 'Generate an Animal', animl: anim });
   });
 
-  
-app.get('/contact', function (req, res) {
-    //res.sendFile('./pages/contact.html', {root: __dirname});
-    res.render('contact', {title: 'Contact Us', fullname: 'Beidou Ningguang'});
-  });
-
-app.get('/landing', function (req, res) {
+app.get('/other', function (req, res) {
   weather.find({search: 'Davao, PH', degreeType: 'C'}, function(err, result) {
     if(err){
         console.log(err);
-        res.render('landing', {title: 'Weather', heading: 'Weather', weather: 'Nothing'});
+        res.render('other', {title: 'Weather', heading: 'Weather', weather: 'Nothing'});
     }
     else{
         //console.log(result);
-        res.render('landing', {title: 'Weather', heading: 'Weather', weather: result});
+        res.render('other', {title: 'Weather', heading: 'Weather', weather: result});
     
     }
     console.log(result);
   });
 });
-
-app.get('/aboutus', function (req, res) {
-    res.redirect('/about');
-    
-});
-
 
 app.use((req, res) => {
     res.render('error', {title: 'Error 404'});
