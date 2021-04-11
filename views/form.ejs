@@ -1,0 +1,88 @@
+<html>
+  <%- include('./partials/header') %>
+  
+  <body style="background-color: #F7F4EA;">
+     <div style= "margin: 15px;">
+      
+      <%- include('./partials/navigation') %>
+<br><br>
+      <center>
+      <img src="../icons/<%= img %>.png" style="width: 100px; height:60px"/><br><br>
+      </center>
+
+      <div class="card" style="width: 500px;height: 500px;margin:0 auto; float:none; margin-bottom:10px; border-radius: 25px ">
+        <div class="card-body">
+          <center><h5 class="card-title">Add a New Person</h5></center><br>
+          
+          <form class="row g-3 needs-validation" action="/addpip" method="POST" novalidate>
+            
+            <div class="form-floating mb-3">
+              <input class="form-control" id="fullname" name="fullname" placeholder="FullName" type="text" required>
+              <label for="fullname">Full Name</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="nationality" name= "nationality" value = "<%= nationality%>" readonly>
+              <label>Nationality</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+              <input class="form-control" id="birthdate" name="birthdate" placeholder="MM/DD/YYY" type="text" required>
+              <label for="birthdate">Birthdate (MM/DD/YYYY</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-12">
+              
+            </div>
+
+            <button class="btn btn-primary" type="submit" style="border-radius: 15px; background-color: #F35FAC;border-color: #F35FAC;">Submit</button>
+            <center><a href="/portal" style="align-content: center;">Back</a></center>
+          </form>
+
+        </div>
+      </div>
+
+      <%- include('./partials/footer') %>
+  </body>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+// $(document).ready(function(){
+//         var date_input=$('input[name="date"]'); //our date input has the name "date"
+//         var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+//         date_input.datepicker({
+//             format: 'mm/dd/yyyy',
+//             container: container,
+//             todayHighlight: true,
+//             autoclose: true,
+//         })
+//     })
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+</html>

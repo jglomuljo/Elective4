@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   
+   <%- include('./partials/header') %>
+
+  <body style="background-color: #F7F4EA;">
+   <div style=" margin: 15px;">
+
+        <%- include('./partials/navigation') %>
+<br><br>
+   <center>
+   <div class="container">
+      <div class="row" >
+         <ul>
+            <li style="display: inline-block; vertical-align: middle;">
+               <span class="d-flex justify-content-end"><img src= "../icons/<%= img %>.png" style="width: 300px; height: 180px"></span>
+            </li>
+            <li style="display: inline-block; vertical-align: middle; margin-left: 20px;">
+               <h3 class="d-flex display-4 pt-3"><%= date %></h3>
+               <h3 class="d-flex display-4 pt-6"><%= time %></h3>
+            </li>
+         </ul>
+      </div>
+      <br><br>
+      <form method="GET" action="/form">
+         <button type="submit" class="btn" style="background-color: #F2A913; color: #F7F4EA; float: right;">ADD NEW</button><br><br>
+      <table class="table table-sm">
+         <thead>
+            <tr style="text-align: center;">
+              <th scope="col">#</th>
+              <th scope="col">Person Name</th>
+              <th scope="col">Birthdate</th>
+              <th scope="col">Nationality</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead> 
+           <tbody style="text-align: center;" >
+            <% var num = 1; %>
+            <% if (persons.length > 0) { %>
+              <% persons.forEach(person => { %> 
+                <tr>
+                  <td> <%=num%> </td>
+                  <td> <%=person["fullname"]%> </td>
+                  <td> <%=person["birthdate"]%> </td>
+                  <td> <%=person["nationality"]%> </td>
+                  <td> <a href="/viewperson/<%= person._id%>" type="button" class="btn btn-outline-dark" style="background: #F35FAC; color: #F7F4EA; border-color: #F35FAC;">View</a> </td>
+                </tr>
+                <% num++; %>
+              <% }) %> 
+            <% } %>
+         </tbody>
+      </table>
+   </div>
+</form>   
+</center>
+
+   <%- include('./partials/footer') %>
+
+  </body>
+</html>

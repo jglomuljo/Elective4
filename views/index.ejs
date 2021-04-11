@@ -42,25 +42,18 @@
     </ul>
   </div>
 <br>
-<ul>
-  <li style="display: inline-block; vertical-align: middle;">
-  
-    <select class="form-select " aria-label=".form-select-lg example" style="width: 200px;">
+<form action ="/portal" method="POST" class="form-inline">
+    <select class="form-select mb-2" aria-label=".form-select-lg example" style="width: 220px;" name ="country">
       <option selected>Pick a Location</option>
-      <option value="1">Philippines</option>
-      <option value="2">South Korea</option>
-      <option value="3">Greece</option>
-      <option value="2">Switzerland</option>
-      <option value="3">Canada</option>
+      <option value="Asia/Manila">Manila</option>
+      <option value="Asia/Seoul">Seoul</option>
+      <option value="Asia/Jakarta">Jakarta</option>
+      <option value="Asia/Jerusalem">Jerusalem</option>
+      <option value="Asia/Dubai">Dubai</option>
     </select>
-  </li>
-  <li style="display: inline-block; vertical-align: middle;">
-    <a type="button" class="btn" style="background-color: #574FAB; color: #F7F4EA;" href="other">JOIN</a>
-  </li>
-</ul>
+    <button class="btn btn-primary mb-2" type="submit" style="background-color: #F35FAC;border-color: #F35FAC;margin-bottom: 16px;">JOIN</button>
+</form>
 </center>
-
    <%- include('./partials/footer') %>
-
   </body>
 </html>

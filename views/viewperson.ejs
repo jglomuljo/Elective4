@@ -1,0 +1,40 @@
+<html>
+   <%- include('./partials/header') %>
+   
+  <body style="background-color: #F7F4EA;">
+     <div style=" margin: 15px;">
+      
+      <%- include('./partials/navigation') %>
+
+      <div class="card" style="width: 500px;height: 450px;margin:0 auto; float:none; margin-bottom:10px; border-radius: 25px ">
+        <div class="card-body">
+          <center><h5 class="card-title">View Person</h5></center><br>
+          
+          <form class="row g-3 " action="/viewaction" method="POST">
+            
+            <div class="form-floating mb-3">
+              <input class="form-control" id="fullname" name="fullname" value= "<%= preview.fullname%>" type="text" disabled readonly>
+              <label>Full Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="nationality" name="nationality" value="<%= preview.nationality%>" disabled readonly>
+              <label>Nationality</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+              <input class="form-control" id="birthdate" name="birthdate" value="<%= preview.birthdate%>" type="text" disabled readonly>
+              <label>Birthdate (MM/DD/YYYY)</label>
+            </div>
+            <div class="col-12">
+            </div>
+            <center><a type="button" class="btn" style="background-color: #574FAB; color: #F7F4EA; margin-bottom: 16px;width: 460px;" href="/portal" onclick="">Back</a></center>
+          </form>
+        </div>
+      </div>
+
+
+    <%- include('./partials/footer') %>
+    
+  </body>
+</html>
